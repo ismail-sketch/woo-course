@@ -108,17 +108,41 @@ get_header();
                     <div class="main__right-cont">
                         <div class="swiper swiper1">
                             <div class="swiper-wrapper">
-                                <!-- Slides -->
-                                <div class="swiper-slide" style="background-image: url('<?php echo get_template_directory_uri()?>/assets/img/mainpage/bag-slide.png');">
+
+                            <?php
+                            // параметры по умолчанию
+                                $my_posts = get_posts( array(
+                                    'numberposts' => -1,
+                                    'orderby'     => 'date',
+                                    'order'       => 'ASC',
+                                    'post_type'   => 'slider',
+                                    'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                                ) );
+
+                                global $post;
+
+                                foreach( $my_posts as $post ){
+                                    setup_postdata( $post );
+
+                                    // формат вывода the_title() ...
+                                    ?>
+                                     <!-- Slides -->
+                                <div class="swiper-slide" style="background-image: url('<?php the_post_thumbnail_url()?>');">
                                     <div class="swiper1__left">
-                                        <h2 class="swiper1__discount-title"></h2>
-                                        <h3 class="swiper1__promotion-title">АКЦИЯ!</h3>
-                                        <p class="swiper1__text">ДАРИМ СУМКУ <br> ДЛЯ ИНСТРУМЕНТА <br> ЗА ПОКУПКУ ОТ 25 000 ₽</p>
-                                        <a href="#" class="swiper1__btn">К ПОКУПКАМ</a>
+                                        <h2 class="swiper1__discount-title"><?php the_field('slide_title')?></h2>
+                                        <h3 class="swiper1__promotion-title"><?php the_field('promo')?></h3>
+                                        <p class="swiper1__text"><?php the_field('slide_text')?></p>
+                                        <a href="<?php the_field('link_btn')?>" class="swiper1__btn"><?php the_field('tekst_knopki')?></a>
                                     </div>
                                 </div>
+                                    <?php
+                                }
 
-                                <div class="swiper-slide" style="background-image: url('<?php echo get_template_directory_uri()?>/assets/img/mainpage/engine-slide.png');">
+                                wp_reset_postdata(); // сброс
+                            ?>
+
+
+                                <!-- <div class="swiper-slide" style="background-image: url('<?php echo get_template_directory_uri()?>/assets/img/mainpage/engine-slide.png');">
                                     <div class="swiper1__left">
                                         <h2 class="swiper1__discount-title">Скидка 7 %</h2>
                                         <h3 class="swiper1__promotion-title"></h3>
@@ -134,7 +158,7 @@ get_header();
                                         <p class="swiper1__text">НА ВСЁ ЭЛЕКТРОУСТАНОВОЧНОЕ ОБОРУДОВАНИЕ</p>
                                         <a href="#" class="swiper1__btn">К ПОКУПКАМ</a>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <!-- If we need pagination -->
                             <div class="swiper-pagination"></div>

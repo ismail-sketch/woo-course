@@ -16,7 +16,21 @@
 
         <header class="header">
             <div class="container header__container">
-                <nav class="mainMenu">
+                <?php
+                    wp_nav_menu( [
+                        'theme_location'  => 'main_menu',
+                        'menu'            => 'main_menu',
+                        'container'       => 'nav',
+                        'container_class' => 'mainMenu',
+                        'menu_class'      => 'mainMenu__wrp',
+                        'fallback_cb'     => 'wp_page_menu',
+                        'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                        'depth'           => 0,
+                        'walker'          => '',
+                        'add_li_class' => 'mainMenu__item'
+                    ] );
+                ?>
+                <!-- <nav class="mainMenu">
                     <ul class="mainMenu__wrp">
                         <li class="mainMenu__item">
                             <a href="#" class="mainMenu__link">Доставка</a>
@@ -34,7 +48,7 @@
                             <a href="#" class="mainMenu__link">Блог</a>
                         </li>
                     </ul>
-                </nav>
+                </nav> -->
                <div class="header__cont-wrp">
                     <a class="header__logo">
                         <img src="<?php echo get_template_directory_uri()?>/assets/img/mainpage/logo.svg" alt="logo">
