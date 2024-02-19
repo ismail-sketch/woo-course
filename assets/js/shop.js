@@ -124,5 +124,21 @@ if(shopChangeViewBgIcon2 !== null && shopChangeViewBgIcon1 !== null) {
 }
 
 
+// Добавление класса к изображениям слайдера с избранными товарами
+const swiperRecImgWrp = document.querySelectorAll('.swiperRec__img-wrp img');
+
+swiperRecImgWrp.forEach(item => {
+	item.classList.add('swiperRec__img');
+	console.log(item);
+})
+
+// Добавление класса к кнопке слайдера с избранными товарами
+
+const swiperRecBtn  = document.querySelectorAll('.swiperRec .add_to_cart_button');
+
+swiperRecBtn.forEach(item => {
+	item.classList.add('swiperRec__slide-btn');
+})
+
 });
 // конец DOMContentLoaded

@@ -6,6 +6,8 @@ Template Name: Главная
 */
 get_header();
 
+include 'incs/slider-product.php'
+
 ?>
    <!-- main -->
    <main class="main">
@@ -141,24 +143,6 @@ get_header();
                                 wp_reset_postdata(); // сброс
                             ?>
 
-
-                                <!-- <div class="swiper-slide" style="background-image: url('<?php echo get_template_directory_uri()?>/assets/img/mainpage/engine-slide.png');">
-                                    <div class="swiper1__left">
-                                        <h2 class="swiper1__discount-title">Скидка 7 %</h2>
-                                        <h3 class="swiper1__promotion-title"></h3>
-                                        <p class="swiper1__text">ЭЛЕКТРОДВИГАТЕЛЬ CROMPTON</p>
-                                        <a href="#" class="swiper1__btn">ПОСМОТРЕТЬ</a>
-                                    </div>
-                                </div>
-
-                                <div class="swiper-slide" style="background-image: url('<?php echo get_template_directory_uri()?>/assets/img/mainpage/switches-slide.png');">
-                                    <div class="swiper1__left">
-                                        <h2 class="swiper1__discount-title">Скидка 10 %</h2>
-                                        <h3 class="swiper1__promotion-title"></h3>
-                                        <p class="swiper1__text">НА ВСЁ ЭЛЕКТРОУСТАНОВОЧНОЕ ОБОРУДОВАНИЕ</p>
-                                        <a href="#" class="swiper1__btn">К ПОКУПКАМ</a>
-                                    </div>
-                                </div> -->
                             </div>
                             <!-- If we need pagination -->
                             <div class="swiper-pagination"></div>
@@ -279,74 +263,7 @@ get_header();
                                     <!-- Additional required wrapper -->
                                     <div class="swiper-wrapper">
                                         <!-- Slides -->
-                                        <div class="swiper-slide">
-
-                                            <div class="swiperRec__img-wrp">
-                                                <img src="<?php echo get_template_directory_uri()?>/assets/img/mainpage/sliderec1.jpg" alt="slide" class="swiperRec__img">
-                                            </div>
-                                            <h3 class="swiperRec__goods-title">Розетка щитовая Abb 16A 250V</h3>
-                                            <div class="swiperRec__prices-wrp">
-                                                <span class="swiperRec__goods-price">250 ₽</span>
-                                            </div>
-                                            <button class="swiperRec__slide-btn">В корзину</button>
-                                        </div>
-
-                                        <div class="swiper-slide">
-
-                                            <div class="swiperRec__img-wrp">
-                                                <img src="<?php echo get_template_directory_uri()?>/assets/img/mainpage/sliderec2.jpg" alt="slide" class="swiperRec__img">
-                                            </div>
-                                            <h3 class="swiperRec__goods-title">Выключатель 2х клавишный алюминий Valena</h3>
-                                            <div class="swiperRec__prices-wrp">
-                                                <span class="swiperRec__goods-price">220 ₽</span>
-                                            </div>
-                                            <button class="swiperRec__slide-btn">В корзину</button>
-                                        </div>
-
-                                        <div class="swiper-slide">
-                                            <div class="swiperRec__img-wrp">
-                                                <img src="<?php echo get_template_directory_uri()?>/assets/img/mainpage/sliderec3.jpg" alt="slide" class="swiperRec__img">
-                                            </div>
-                                            <h3 class="swiperRec__goods-title">Сумка монтажника С-04 КВТ 66143</h3>
-                                            <div class="swiperRec__prices-wrp">
-                                                <span class="swiperRec__goods-price">1150 ₽</span>
-                                            </div>
-                                            <button class="swiperRec__slide-btn">В корзину</button>
-                                        </div>
-
-                                        <div class="swiper-slide">
-                                            <div class="swiperRec__img-wrp">
-                                                <img src="<?php echo get_template_directory_uri()?>/assets/img/mainpage/sliderec4.jpg" alt="slide" class="swiperRec__img">
-                                            </div>
-                                            <h3 class="swiperRec__goods-title">Счетчик электроэнергии однофазный однотарифный INCOTEX Меркурий 201.5 5(60) А</h3>
-                                            <div class="swiperRec__prices-wrp">
-                                                <span class="swiperRec__goods-price">22500 ₽</span>
-                                            </div>
-                                            <button class="swiperRec__slide-btn">В корзину</button>
-                                        </div>
-
-                                        <div class="swiper-slide">
-                                            <div class="swiperRec__img-wrp">
-                                                <img src="<?php echo get_template_directory_uri()?>/assets/img/mainpage/sliderec5.jpg" alt="slide" class="swiperRec__img">
-                                            </div>
-                                            <h3 class="swiperRec__goods-title">Дизельный генератор BISON BS7500DCE, (5500 Вт)</h3>
-                                            <div class="swiperRec__prices-wrp">
-                                                <span class="swiperRec__goods-price">62350 ₽</span>
-                                                <span class="swiperRec__goods-price-discount">75400 ₽</span>
-                                            </div>
-                                            <button class="swiperRec__slide-btn">В корзину</button>
-                                        </div>
-
-                                        <div class="swiper-slide">
-                                            <div class="swiperRec__img-wrp">
-                                                <img src="<?php echo get_template_directory_uri()?>/assets/img/mainpage/sliderec6.jpg" alt="slide" class="swiperRec__img">
-                                            </div>
-                                            <h3 class="swiperRec__goods-title">Стабилизатор напряжения однофазный Штиль ИнСтаб IS 1000 (инверторный) 220В</h3>
-                                            <div class="swiperRec__prices-wrp">
-                                                <span class="swiperRec__goods-price">12500 ₽</span>
-                                            </div>
-                                            <button class="swiperRec__slide-btn">В корзину</button>
-                                        </div>
+                                        <?php woo_course_slider_product()?>
                                     </div>
                                 </div>
                             </div>

@@ -14,12 +14,14 @@ function theme_name_scripts() {
 
 }
 
+// регистрация меню
 add_action( 'after_setup_theme', function(){
 	register_nav_menus( [
 		'main_menu' => 'Главное меню',
 	] );
 } );
 
+// добавление возможности задать класс тегу <li> в меню
 function add_additional_class_on_li($classes, $item, $args) {
     if(isset($args->add_li_class)) {
         $classes[] = $args->add_li_class;
@@ -54,3 +56,12 @@ function register_post_types(){
 	] );
 
 }
+
+// Включить поддержку woo
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
+add_action( 'after_setup_theme', 'woocommerce_support' );
+
+// Отключение стилей woo
+add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );

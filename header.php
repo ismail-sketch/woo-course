@@ -19,7 +19,7 @@
                 <?php
                     wp_nav_menu( [
                         'theme_location'  => 'main_menu',
-                        'menu'            => 'main_menu',
+                        'menu'            => 'Main',
                         'container'       => 'nav',
                         'container_class' => 'mainMenu',
                         'menu_class'      => 'mainMenu__wrp',
@@ -30,25 +30,7 @@
                         'add_li_class' => 'mainMenu__item'
                     ] );
                 ?>
-                <!-- <nav class="mainMenu">
-                    <ul class="mainMenu__wrp">
-                        <li class="mainMenu__item">
-                            <a href="#" class="mainMenu__link">Доставка</a>
-                        </li>
-                        <li class="mainMenu__item">
-                            <a href="#" class="mainMenu__link">Оплата</a>
-                        </li>
-                        <li class="mainMenu__item">
-                            <a href="#" class="mainMenu__link">Вопрос-Ответ</a>
-                        </li>
-                        <li class="mainMenu__item">
-                            <a href="shop.html" class="mainMenu__link">Магазин</a>
-                        </li>
-                        <li class="mainMenu__item">
-                            <a href="#" class="mainMenu__link">Блог</a>
-                        </li>
-                    </ul>
-                </nav> -->
+
                <div class="header__cont-wrp">
                     <a class="header__logo">
                         <img src="<?php echo get_template_directory_uri()?>/assets/img/mainpage/logo.svg" alt="logo">
