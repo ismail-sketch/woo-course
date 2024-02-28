@@ -2,6 +2,7 @@
 
 function woo_course_slider_product()
 {
+    $num = get_field('slide_featured');
 
     $args = array(
         'post_status'   => 'publish',
@@ -9,7 +10,7 @@ function woo_course_slider_product()
         'orderby'        => 'meta_value_num',
         'meta_key'       => '_price',
         'order'         =>  'ASC',
-        'posts_per_page' => 4,
+        'posts_per_page' => $num,
         'tax_query' => [array(
             'taxonomy' => 'product_visibility',
             'field'    => 'name',
@@ -33,6 +34,9 @@ function woo_course_slider_product()
                 <span class="swiperRec__goods-price"><?php woocommerce_template_loop_price()?></span>
             </div>
             <?php woocommerce_template_loop_add_to_cart()?>
+            <div class="gif">
+                <img src="<?php echo get_template_directory_uri()?>/assets/img/shop/loader.gif" alt="">
+            </div>
         </div>
 <?php
 

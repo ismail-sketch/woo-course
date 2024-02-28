@@ -140,5 +140,27 @@ swiperRecBtn.forEach(item => {
 	item.classList.add('swiperRec__slide-btn');
 })
 
-});
-// конец DOMContentLoaded
+
+// Отслеживаем процесс добавления в корзину на главной
+const swiperRec = document.querySelector('.swiperRec');
+function callback() {
+	swiperRecBtn.forEach(item => {
+		if(item.classList.contains('loading')) {
+			item.parentNode.querySelector('.gif').style.display = 'flex';
+		}
+		if(item.classList.contains('added')) {
+			item.parentNode.querySelector('.gif').style.display = 'none';
+		}
+	})
+}
+
+const observer = new MutationObserver(callback);
+
+observer.observe(swiperRec, {
+	subtree: true,
+	attributes: true
+})
+
+
+
+});// конец DOMContentLoaded

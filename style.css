@@ -1295,6 +1295,24 @@ main {
   position: absolute;
 }
 
+.gif {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #232323b2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.gif img {
+  width: 50px;
+  height: auto;
+}
+
 /*end swiperRec ------------------------*/
 /*blogposts----------------------*/
 .blogposts {
